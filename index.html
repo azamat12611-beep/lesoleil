@@ -1,0 +1,927 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок французского: Глаголы 1 группы и être</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 4px dashed #5c6bc0;
+        }
+        
+        .header h1 {
+            color: #3949ab;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #546e7a;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #3949ab;
+        }
+        
+        .section h2 {
+            color: #3949ab;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        
+        .vocab-box {
+            background-color: #e8eaf6;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #7986cb;
+        }
+        
+        .vocab-title {
+            color: #3949ab;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .conjugation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .conjugation-table th {
+            background-color: #5c6bc0;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .conjugation-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .conjugation-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .example {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffb300;
+            font-weight: 500;
+        }
+        
+        .text-section {
+            background-color: #f1f8e9;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 2px solid #81c784;
+        }
+        
+        .sentence {
+            padding: 15px;
+            margin: 15px 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            border-left: 4px solid #43a047;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .question {
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #2e7d32;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .task-section {
+            background-color: #fff3e0;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #ffb74d;
+        }
+        
+        .task {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .task h3 {
+            margin-top: 0;
+            color: #ef6c00;
+            border-bottom: 2px solid #ffb74d;
+            padding-bottom: 10px;
+        }
+        
+        .input-answer {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .input-answer:focus {
+            outline: none;
+            border-color: #5c6bc0;
+            box-shadow: 0 0 5px rgba(92, 107, 192, 0.5);
+        }
+        
+        .feedback {
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: none;
+        }
+        
+        .correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4caf50;
+        }
+        
+        .incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 2px solid #f44336;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #3949ab 0%, #5c6bc0 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(57, 73, 171, 0.4);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(57, 73, 171, 0.6);
+        }
+        
+        .final-task {
+            background: linear-gradient(135deg, #7e57c2 0%, #5e35b1 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .final-task h2 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .congrats {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #ff8a65 0%, #ff5722 100%);
+            border-radius: 15px;
+            margin-top: 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: none;
+        }
+        
+        .matching-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .matching-column {
+            width: 48%;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .matching-item {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .matching-item:hover {
+            border-color: #5c6bc0;
+            background-color: #e8eaf6;
+        }
+        
+        .matching-item.selected {
+            border-color: #3949ab;
+            background-color: #3949ab;
+            color: white;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .matching-container {
+                flex-direction: column;
+            }
+            .matching-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌟 Bonjour, mon élève ! 🌟</h1>
+            <p>Сегодня мы изучим две важные темы: глаголы 1 группы (-er) и глагол "être" (быть)!</p>
+        </div>
+        
+        <div class="section">
+            <h2>📚 Наши цели на сегодня</h2>
+            <p>Сегодня мы научимся:</p>
+            <ul>
+                <li>Спрягать глаголы 1 группы (-er) в настоящем времени</li>
+                <li>Использовать отрицание "ne...pas" с глаголами</li>
+                <li>Спрягать глагол "être" (быть) во всех лицах</li>
+                <li>Говорить о времени суток и членах семьи</li>
+            </ul>
+            <p>Не волнуйтесь, если что-то покажется сложным! Мы будем двигаться шаг за шагом.</p>
+        </div>
+        
+        <div class="section">
+            <h2>📖 Основная лексика и грамматика</h2>
+            
+            <div class="vocab-box">
+                <div class="vocab-title">Глагол "être" (быть) - очень важный глагол!</div>
+                <table class="conjugation-table">
+                    <tr>
+                        <th>Французский</th>
+                        <th>Русский</th>
+                    </tr>
+                    <tr>
+                        <td>je suis</td>
+                        <td>я есть/я являюсь</td>
+                    </tr>
+                    <tr>
+                        <td>tu es</td>
+                        <td>ты есть</td>
+                    </tr>
+                    <tr>
+                        <td>il/elle/on est</td>
+                        <td>он/она/мы есть</td>
+                    </tr>
+                    <tr>
+                        <td>nous sommes</td>
+                        <td>мы есть</td>
+                    </tr>
+                    <tr>
+                        <td>vous êtes</td>
+                        <td>вы есть</td>
+                    </tr>
+                    <tr>
+                        <td>ils/elles sont</td>
+                        <td>они есть</td>
+                    </tr>
+                </table>
+                
+                <div class="example">
+                    <strong>Примеры:</strong><br>
+                    Je suis étudiant. (Я студент.)<br>
+                    Elle est médecin. (Она врач.)<br>
+                    Nous sommes en France. (Мы во Франции.)
+                </div>
+            </div>
+            
+            <div class="vocab-box">
+                <div class="vocab-title">Глаголы 1 группы (-er) и отрицание "ne...pas"</div>
+                <p>Глаголы 1 группы оканчиваются на -er. Чтобы спрягать их, убираем -er и добавляем окончания: -e, -es, -e, -ons, -ez, -ent.</p>
+                
+                <table class="conjugation-table">
+                    <tr>
+                        <th>Глагол "manger" (есть)</th>
+                        <th>Глагол "jouer" (играть)</th>
+                    </tr>
+                    <tr>
+                        <td>je mange</td>
+                        <td>je joue</td>
+                    </tr>
+                    <tr>
+                        <td>tu manges</td>
+                        <td>tu joues</td>
+                    </tr>
+                    <tr>
+                        <td>il/elle mange</td>
+                        <td>il/elle joue</td>
+                    </tr>
+                    <tr>
+                        <td>nous mangeons</td>
+                        <td>nous jouons</td>
+                    </tr>
+                    <tr>
+                        <td>vous mangez</td>
+                        <td>vous jouez</td>
+                    </tr>
+                    <tr>
+                        <td>ils/elles mangent</td>
+                        <td>ils/elles jouent</td>
+                    </tr>
+                </table>
+                
+                <div class="example">
+                    <strong>Отрицание "ne...pas":</strong><br>
+                    Je mange → Je ne mange pas (Я не ем)<br>
+                    Il joue → Il ne joue pas (Он не играет)<br>
+                    Nous regardons → Nous ne regardons pas (Мы не смотрим)
+                </div>
+            </div>
+            
+            <div class="vocab-box">
+                <div class="vocab-title">Время суток и семья</div>
+                <table class="conjugation-table">
+                    <tr>
+                        <th>Французский</th>
+                        <th>Русский</th>
+                    </tr>
+                    <tr>
+                        <td>le matin</td>
+                        <td>утро</td>
+                    </tr>
+                    <tr>
+                        <td>à midi</td>
+                        <td>в полдень</td>
+                    </tr>
+                    <tr>
+                        <td>l'après-midi</td>
+                        <td>после полудня</td>
+                    </tr>
+                    <tr>
+                        <td>le soir</td>
+                        <td>вечер</td>
+                    </tr>
+                    <tr>
+                        <td>la nuit</td>
+                        <td>ночь</td>
+                    </tr>
+                    <tr>
+                        <td>le père</td>
+                        <td>отец</td>
+                    </tr>
+                    <tr>
+                        <td>la mère</td>
+                        <td>мать</td>
+                    </tr>
+                    <tr>
+                        <td>le fils</td>
+                        <td>сын</td>
+                    </tr>
+                    <tr>
+                        <td>la fille</td>
+                        <td>дочь</td>
+                    </tr>
+                    <tr>
+                        <td>les enfants</td>
+                        <td>дети</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📖 Давайте прочитаем текст вместе! "La famille Martin un jour de semaine"</h2>
+            <p>Читаем по одному предложению. Я буду задавать вопросы на русском, чтобы проверить ваше понимание!</p>
+            
+            <div class="text-section">
+                <div class="sentence">
+                    <p><strong>- Le matin, le soleil se lève. Pierre Martin se réveille à sept heures. Il ne se réveille pas tard. Il <span class="highlight">est</span> le père.</strong></p>
+                    <div class="question">Во сколько просыпается Пьер? Какой глагол используется для "он есть отец"?</div>
+                </div>
+                
+                <div class="sentence">
+                    <p><strong>- À midi, la famille <span class="highlight">mange</span> à la maison. Ils <span class="highlight">ne mangent pas</span> au restaurant. Sophie Martin prépare le déjeuner. Elle <span class="highlight">est</span> la mère.</strong></p>
+                    <div class="question">Где семья ест в полдень? Как выглядит отрицательная форма глагола "manger"? Кто готовит обед?</div>
+                </div>
+                
+                <div class="sentence">
+                    <p><strong>- L'après-midi, les enfants <span class="highlight">jouent</span> dans le parc. Ils aiment <span class="highlight">jouer</span>. Léa <span class="highlight">est</span> la fille et Lucas <span class="highlight">est</span> le fils.</strong></p>
+                    <div class="question">Что делают дети после полудня? Какой глагол 1 группы здесь используется? Кто Лэа и кто Люка?</div>
+                </div>
+                
+                <div class="sentence">
+                    <p><strong>- Le soir, le soleil se couche. La famille <span class="highlight">regarde</span> la télévision. Ils <span class="highlight">ne regardent pas</span> la lune et les étoiles aujourd'hui.</strong></p>
+                    <div class="question">Что делает семья вечером? Как выглядит отрицательная форма глагола "regarder"?</div>
+                </div>
+                
+                <div class="sentence">
+                    <p><strong>- La nuit, tout le monde <span class="highlight">dort</span>. La maison <span class="highlight">est</span> calme.</strong></p>
+                    <div class="question">Что делает вся семья ночью? Какой глагол используется для "дом спокойный"?</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Интерактивные задания</h2>
+            <p>Теперь давайте попрактикуемся! Я буду давать вам задания по одному. Попробуйте ответить сами!</p>
+            
+            <div class="task-section">
+                <div class="task">
+                    <h3>Задание 1: Заполните пропуски (глагол être)</h3>
+                    <p>1. Je _____ étudiant(e).</p>
+                    <input type="text" class="input-answer" id="t1q1" placeholder="Введите ответ здесь...">
+                    
+                    <p>2. Tu _____ en France.</p>
+                    <input type="text" class="input-answer" id="t1q2" placeholder="Введите ответ здесь...">
+                    
+                    <p>3. Il _____ le père.</p>
+                    <input type="text" class="input-answer" id="t1q3" placeholder="Введите ответ здесь...">
+                    
+                    <p>4. Nous _____ à la maison.</p>
+                    <input type="text" class="input-answer" id="t1q4" placeholder="Введите ответ здесь...">
+                    
+                    <p>5. Vous _____ professeur.</p>
+                    <input type="text" class="input-answer" id="t1q5" placeholder="Введите ответ здесь...">
+                    
+                    <p>6. Elles _____ les filles.</p>
+                    <input type="text" class="input-answer" id="t1q6" placeholder="Введите ответ здесь...">
+                    
+                    <div class="feedback" id="feedback1"></div>
+                    <button onclick="checkTask1()">Проверить ответы</button>
+                </div>
+                
+                <div class="task">
+                    <h3>Задание 2: Преобразуйте утверждения в отрицания</h3>
+                    <p>1. Je mange du pain. → Je _____ mange pas du pain.</p>
+                    <input type="text" class="input-answer" id="t2q1" placeholder="Введите ответ здесь...">
+                    
+                    <p>2. Il joue au football. → Il _____ joue pas au football.</p>
+                    <input type="text" class="input-answer" id="t2q2" placeholder="Введите ответ здесь...">
+                    
+                    <p>3. Nous regardons la télévision. → Nous _____ regardons pas la télévision.</p>
+                    <input type="text" class="input-answer" id="t2q3" placeholder="Введите ответ здесь...">
+                    
+                    <p>4. Vous écoutez la musique. → Vous _____ écoutez pas la musique.</p>
+                    <input type="text" class="input-answer" id="t2q4" placeholder="Введите ответ здесь...">
+                    
+                    <p>5. Ils parlent français. → Ils _____ parlent pas français.</p>
+                    <input type="text" class="input-answer" id="t2q5" placeholder="Введите ответ здесь...">
+                    
+                    <div class="feedback" id="feedback2"></div>
+                    <button onclick="checkTask2()">Проверить ответы</button>
+                </div>
+                
+                <div class="task">
+                    <h3>Задание 3: Спрягите глаголы</h3>
+                    <p>1. (manger) Tu _____ une pomme.</p>
+                    <input type="text" class="input-answer" id="t3q1" placeholder="Введите ответ здесь...">
+                    
+                    <p>2. (jouer) Nous _____ au tennis.</p>
+                    <input type="text" class="input-answer" id="t3q2" placeholder="Введите ответ здесь...">
+                    
+                    <p>3. (regarder) Elle _____ un film.</p>
+                    <input type="text" class="input-answer" id="t3q3" placeholder="Введите ответ здесь...">
+                    
+                    <p>4. (aimer) Vous _____ le chocolat.</p>
+                    <input type="text" class="input-answer" id="t3q4" placeholder="Введите ответ здесь...">
+                    
+                    <p>5. (parler) Ils _____ anglais.</p>
+                    <input type="text" class="input-answer" id="t3q5" placeholder="Введите ответ здесь...">
+                    
+                    <div class="feedback" id="feedback3"></div>
+                    <button onclick="checkTask3()">Проверить ответы</button>
+                </div>
+                
+                <div class="task">
+                    <h3>Задание 4: Соотнесите слова с их значениями</h3>
+                    <p>Соедините французские слова с их русскими переводами.</p>
+                    
+                    <div class="matching-container">
+                        <div class="matching-column">
+                            <h4>Французские слова</h4>
+                            <div id="french-container"></div>
+                        </div>
+                        
+                        <div class="matching-column">
+                            <h4>Русские переводы</h4>
+                            <div id="russian-container"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback" id="feedback4"></div>
+                    <button onclick="checkTask4()">Проверить ответы</button>
+                </div>
+                
+                <div class="task">
+                    <h3>Задание 5: Ответьте на вопросы о тексте</h3>
+                    <p>1. Où est-ce que la famille mange à midi? (Где семья ест в полдень?)</p>
+                    <input type="text" class="input-answer" id="t5q1" placeholder="Введите ответ здесь...">
+                    
+                    <p>2. Qui prépare le déjeuner? (Кто готовит обед?)</p>
+                    <input type="text" class="input-answer" id="t5q2" placeholder="Введите ответ здесь...">
+                    
+                    <p>3. Qu'est-ce que les enfants font l'après-midi? (Что делают дети после полудня?)</p>
+                    <input type="text" class="input-answer" id="t5q3" placeholder="Введите ответ здесь...">
+                    
+                    <p>4. Qu'est-ce que la famille regarde le soir? (Что смотрит семья вечером?)</p>
+                    <input type="text" class="input-answer" id="t5q4" placeholder="Введите ответ здесь...">
+                    
+                    <p>5. Comment est la maison la nuit? (Какой дом ночью?)</p>
+                    <input type="text" class="input-answer" id="t5q5" placeholder="Введите ответ здесь...">
+                    
+                    <div class="feedback" id="feedback5"></div>
+                    <button onclick="checkTask5()">Проверить ответы</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="final-task">
+            <h2>✏️ Ваша очередь! Напишите о своей семье</h2>
+            <p>Напишите 2-3 предложения о своей семье, используя:</p>
+            <ul style="text-align: left; margin: 20px auto; max-width: 600px;">
+                <li>Хотя бы один глагол 1 группы (-er)</li>
+                <li>Хотя бы одну форму глагола "être"</li>
+                <li>Слова о времени суток (le matin, le soir и т.д.)</li>
+            </ul>
+            <p>Пример: <em>"Le matin, je mange du pain. Ma mère est médecin. Le soir, nous regardons la télévision."</em></p>
+            <textarea class="input-answer" id="userSentence" placeholder="Напишите здесь о своей семье..." style="height: 150px; margin: 20px 0; width: 90%;"></textarea>
+            <button onclick="checkFinalTask()">Проверить мои предложения!</button>
+        </div>
+        
+        <div class="congrats" id="congratsMessage">
+            🎉 Поздравляю! Вы отлично справились с уроком! 🎉
+            <br><br>
+            Вы сделали большой шаг в изучении французского языка! Продолжайте практиковаться!
+        </div>
+    </div>
+    
+    <script>
+        // Variables for tracking selections in matching task
+        let selectedFrench = null;
+        let selectedRussian = null;
+        let matches = {};
+        
+        // Function to handle item selection in matching task
+        function selectItem(element, id) {
+            if (id.startsWith('fr')) {
+                // If previously selected French item, deselect it
+                if (selectedFrench && selectedFrench !== element) {
+                    selectedFrench.classList.remove('selected');
+                }
+                element.classList.toggle('selected');
+                selectedFrench = element.classList.contains('selected') ? element : null;
+            } else if (id.startsWith('ru')) {
+                // If previously selected Russian item, deselect it
+                if (selectedRussian && selectedRussian !== element) {
+                    selectedRussian.classList.remove('selected');
+                }
+                element.classList.toggle('selected');
+                selectedRussian = element.classList.contains('selected') ? element : null;
+            }
+            
+            // If both French and Russian items are selected, create a match
+            if (selectedFrench && selectedRussian) {
+                const frenchText = selectedFrench.textContent;
+                const russianText = selectedRussian.textContent;
+                matches[frenchText] = russianText;
+                
+                // Visual feedback for the match
+                selectedFrench.style.opacity = '0.7';
+                selectedRussian.style.opacity = '0.7';
+                selectedFrench.style.border = '2px solid #4caf50';
+                selectedRussian.style.border = '2px solid #4caf50';
+                
+                // Deselect both
+                selectedFrench = null;
+                selectedRussian = null;
+            }
+        }
+        
+        // Task 1: Check être conjugations
+        function checkTask1() {
+            const answers = {
+                1: 'suis',
+                2: 'es',
+                3: 'est',
+                4: 'sommes',
+                5: 'êtes',
+                6: 'sont'
+            };
+            
+            let allCorrect = true;
+            let score = 0;
+            let userAnswers = {};
+            
+            for (let i = 1; i <= 6; i++) {
+                const userAnswer = document.getElementById(`t1q${i}`).value.trim().toLowerCase();
+                userAnswers[i] = userAnswer;
+                
+                if (userAnswer !== answers[i]) {
+                    allCorrect = false;
+                } else {
+                    score++;
+                }
+            }
+            
+            const feedbackElement = document.getElementById('feedback1');
+            if (allCorrect) {
+                feedbackElement.innerHTML = "✅ Потрясающе! Все ответы правильные! Вы отлично знаете глагол être!";
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.innerHTML = `❌ Есть ошибки. Правильные ответы: 1. suis, 2. es, 3. est, 4. sommes, 5. êtes, 6. sont. У вас ${score} из 6 правильных ответов.`;
+                feedbackElement.className = 'feedback incorrect';
+            }
+            feedbackElement.style.display = 'block';
+        }
+        
+        // Task 2: Check negations
+        function checkTask2() {
+            const answers = {
+                1: 'ne',
+                2: 'ne',
+                3: 'ne',
+                4: 'ne',
+                5: 'ne'
+            };
+            
+            let allCorrect = true;
+            let score = 0;
+            let userAnswers = {};
+            
+            for (let i = 1; i <= 5; i++) {
+                const userAnswer = document.getElementById(`t2q${i}`).value.trim().toLowerCase();
+                userAnswers[i] = userAnswer;
+                
+                if (userAnswer !== answers[i]) {
+                    allCorrect = false;
+                } else {
+                    score++;
+                }
+            }
+            
+            const feedbackElement = document.getElementById('feedback2');
+            if (allCorrect) {
+                feedbackElement.innerHTML = "✅ Отлично! Вы правильно используете отрицание 'ne...pas'!";
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.innerHTML = `❌ Есть ошибки. Во всех случаях нужно использовать 'ne'. У вас ${score} из 5 правильных ответов.`;
+                feedbackElement.className = 'feedback incorrect';
+            }
+            feedbackElement.style.display = 'block';
+        }
+        
+        // Task 3: Check verb conjugations
+        function checkTask3() {
+            const answers = {
+                1: 'manges',
+                2: 'jouons',
+                3: 'regarde',
+                4: 'aimez',
+                5: 'parlent'
+            };
+            
+            let allCorrect = true;
+            let score = 0;
+            let userAnswers = {};
+            
+            for (let i = 1; i <= 5; i++) {
+                const userAnswer = document.getElementById(`t3q${i}`).value.trim().toLowerCase();
+                userAnswers[i] = userAnswer;
+                
+                if (userAnswer !== answers[i]) {
+                    allCorrect = false;
+                } else {
+                    score++;
+                }
+            }
+            
+            const feedbackElement = document.getElementById('feedback3');
+            if (allCorrect) {
+                feedbackElement.innerHTML = "✅ Прекрасно! Вы отлично спрягаете глаголы 1 группы!";
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.innerHTML = `❌ Есть ошибки. Правильные ответы: 1. manges, 2. jouons, 3. regarde, 4. aimez, 5. parlent. У вас ${score} из 5 правильных ответов.`;
+                feedbackElement.className = 'feedback incorrect';
+            }
+            feedbackElement.style.display = 'block';
+        }
+        
+        // Task 4: Check matching
+        function checkTask4() {
+            const correctMatches = {
+                'le matin': 'утро',
+                'le soir': 'вечер',
+                'la mère': 'мать',
+                'le fils': 'сын',
+                'la nuit': 'ночь'
+            };
+            
+            let score = 0;
+            let total = 5;
+            
+            for (let french in correctMatches) {
+                if (matches[french] === correctMatches[french]) {
+                    score++;
+                }
+            }
+            
+            const feedbackElement = document.getElementById('feedback4');
+            if (score === total) {
+                feedbackElement.innerHTML = "✅ Замечательно! Все слова правильно соотнесены!";
+                feedbackElement.className = 'feedback correct';
+                document.getElementById('congratsMessage').style.display = 'block';
+            } else {
+                feedbackElement.innerHTML = `❌ Есть ошибки. Правильно соотнесено ${score} из ${total} пар. Попробуйте еще раз!`;
+                feedbackElement.className = 'feedback incorrect';
+            }
+            feedbackElement.style.display = 'block';
+        }
+        
+        // Task 5: Check comprehension questions
+        function checkTask5() {
+            const answers = {
+                1: 'à la maison',
+                2: 'sophie martin',
+                3: 'ils jouent dans le parc',
+                4: 'la télévision',
+                5: 'calme'
+            };
+            
+            let allCorrect = true;
+            let score = 0;
+            let userAnswers = {};
+            
+            for (let i = 1; i <= 5; i++) {
+                const userAnswer = document.getElementById(`t5q${i}`).value.trim().toLowerCase();
+                userAnswers[i] = userAnswer;
+                
+                // Check if answer contains the correct keyword
+                if (userAnswer.includes(answers[i])) {
+                    score++;
+                } else {
+                    allCorrect = false;
+                }
+            }
+            
+            const feedbackElement = document.getElementById('feedback5');
+            if (allCorrect) {
+                feedbackElement.innerHTML = "✅ Прекрасно! Вы отлично поняли текст!";
+                feedbackElement.className = 'feedback correct';
+            } else {
+                feedbackElement.innerHTML = `❌ Есть ошибки. Попробуйте перечитать текст. У вас ${score} из 5 правильных ответов.`;
+                feedbackElement.className = 'feedback incorrect';
+            }
+            feedbackElement.style.display = 'block';
+        }
+        
+        // Final task: Check user's sentences about their family
+        function checkFinalTask() {
+            const sentence = document.getElementById('userSentence').value.trim();
+            
+            if (sentence === '') {
+                alert("Пожалуйста, напишите хотя бы одно предложение!");
+                return;
+            }
+            
+            // Check for required elements
+            const hasErVerb = /mange|joue|regarde|aime|parle|écoute|prépare|dort|lève|couche/i.test(sentence);
+            const hasEtre = /suis|es|est|sommes|êtes|sont/i.test(sentence);
+            const hasTime = /matin|midi|après-midi|soir|nuit/i.test(sentence);
+            
+            if (hasErVerb && hasEtre && hasTime) {
+                alert("🌟 Отлично! Вы использовали все необходимые элементы: глагол 1 группы, глагол être и время суток! Прекрасное предложение!");
+                document.getElementById('congratsMessage').style.display = 'block';
+            } else if (hasErVerb && hasEtre) {
+                alert("Хорошо! Вы использовали глагол 1 группы и глагол être. Попробуйте добавить слово о времени суток (le matin, le soir и т.д.)!");
+            } else if (hasErVerb && hasTime) {
+                alert("Хорошо! Вы использовали глагол 1 группы и время суток. Попробуйте добавить форму глагола être (suis, es, est и т.д.)!");
+            } else if (hasEtre && hasTime) {
+                alert("Хорошо! Вы использовали глагол être и время суток. Попробуйте добавить глагол 1 группы (mange, joue, regarde и т.д.)!");
+            } else {
+                alert("Попробуйте включить в ваше предложение: 1) глагол 1 группы (-er), 2) форму глагола être, 3) слово о времени суток.");
+            }
+        }
+        
+        // Initialize the matching task with randomized order
+        function initializeMatchingTask() {
+            // Define the pairs
+            const pairs = [
+                { french: 'le matin', russian: 'утро' },
+                { french: 'le soir', russian: 'вечер' },
+                { french: 'la mère', russian: 'мать' },
+                { french: 'le fils', russian: 'сын' },
+                { french: 'la nuit', russian: 'ночь' }
+            ];
+            
+            // Shuffle the French words
+            const frenchWords = [...pairs.map(pair => pair.french)];
+            for (let i = frenchWords.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [frenchWords[i], frenchWords[j]] = [frenchWords[j], frenchWords[i]];
+            }
+            
+            // Shuffle the Russian words
+            const russianWords = [...pairs.map(pair => pair.russian)];
+            for (let i = russianWords.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [russianWords[i], russianWords[j]] = [russianWords[j], russianWords[i]];
+            }
+            
+            // Create French column
+            const frenchContainer = document.getElementById('french-container');
+            frenchWords.forEach((word, index) => {
+                const div = document.createElement('div');
+                div.className = 'matching-item';
+                div.textContent = word;
+                div.setAttribute('onclick', `selectItem(this, 'fr${index}')`);
+                frenchContainer.appendChild(div);
+            });
+            
+            // Create Russian column
+            const russianContainer = document.getElementById('russian-container');
+            russianWords.forEach((word, index) => {
+                const div = document.createElement('div');
+                div.className = 'matching-item';
+                div.textContent = word;
+                div.setAttribute('onclick', `selectItem(this, 'ru${index}')`);
+                russianContainer.appendChild(div);
+            });
+        }
+        
+        // Initialize the page when it loads
+        window.onload = function() {
+            initializeMatchingTask();
+        };
+    </script>
+</body>
+</html>
+```
